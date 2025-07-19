@@ -1,0 +1,41 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+<h2 style="text-align: center;">Sobre a Line Girls</h2>
+
+<div style="max-width: 800px; margin: 0 auto; background-color: #fff0f6; padding: 30px; border-radius: 12px; font-size: 1.1em; line-height: 1.6;">
+    <p>Na <strong>Line Girls</strong>, cada mulher encontra um espaço feito com carinho, força e propósito.</p>
+    
+    <p>Nossa missão vai além da atividade física: queremos inspirar autoestima, saúde e liberdade para todas que passam por aqui.</p>
+
+    <p>Criamos uma academia exclusiva para o público feminino, onde cada detalhe foi pensado para acolher diferentes histórias, corpos e objetivos. Seja você iniciante ou experiente, aqui é o seu lugar.</p>
+
+    <p>Com uma equipe apaixonada, estrutura acolhedora e horários que se adaptam à sua rotina, você treina no seu tempo — com apoio, empatia e motivação.</p>
+
+    <p>Na <strong>Line Girls</strong>, a jornada é leve, mas o resultado é forte</p>
+
+    <p>Somos mais que uma academia. Somos uma rede de mulheres que se fortalecem juntas, todos os dias.</p>
+
+    <p><strong>Vem com a gente viver essa experiência!</strong></p>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{% url 'home' %}">
+        <button style="
+            background-color: #e6007e;
+            color: white;
+            font-size: 1.2em;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        " 
+        onmouseover="this.style.backgroundColor='#c4006a'" 
+        onmouseout="this.style.backgroundColor='#e6007e'">
+            Voltar para o Inicio
+        </button>
+    
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+    <h2>Olá, {{ user.first_name|default:user.username }}! 👋</h2>
+
+    <div style="background-color: #ffe6f0; padding: 20px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
+        <h3>📋 Sua matrícula</h3>
+        <p><strong>Nome:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+        <p><strong>CPF:</strong> {{ matricula.cpf }}</p>
+        <p><strong>Telefone:</strong> {{ matricula.telefone }}</p>
+        <p><strong>Plano:</strong> {{ matricula.get_plano_display }}</p>
+        <p><strong>Data da matrícula:</strong> {{ matricula.data_matricula }}</p>
+
+        <div style="margin-top: 20px;">
+            <a href="{% url 'horarios' %}"><button>Ver horários disponíveis</button></a>
+            <a href="{% url 'personals' %}"><button style="margin-left: 10px;">Conhecer personal trainers</button></a>
+            <a href="{% url 'editar_matricula' %}">
+    <button style="margin-top: 10px;">Editar matrícula</button>
+</a>
+
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{% url 'logout' %}">
+            <button style="background-color: #ccc; color: #333;">Sair da conta</button>
+        </a>
+    </div>
+{% endblock %}

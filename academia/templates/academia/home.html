@@ -1,0 +1,64 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+<div style="text-align: center; padding: 40px 20px; max-width: 900px; margin: auto;">
+
+    <div style="margin-bottom: 30px;">
+        <h1 style="color: #e6007e; font-size: 2.5em; font-weight: bold; margin: 0;">
+            VEM PRA MELHOR
+        </h1>
+        <h2 style="
+            font-size: 2.4em;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 1px #e6007e;
+            text-stroke: 1px #e6007e;
+            margin-top: 10px;
+        ">
+            VEM SER LINE GIRLS
+        </h2>
+    </div>
+
+    <p style="font-size: 1.1em; text-align: justify; line-height: 1.7; color: #333;">
+        Uma academia pensada exclusivamente para o público feminino. Tecnologia e performance andam juntas para transformar seus treinos em resultados reais. Seja você iniciante ou avançada, temos um espaço pensado para quem busca evolução constante.
+    </p>
+
+    <p style="font-size: 1.1em; text-align: justify; line-height: 1.7; color: #333;">
+        Na Line Girls, cada treino é um passo rumo a uma nova versão de você. Nosso ambiente foi pensado nos mínimos detalhes para impulsionar sua evolução, com estrutura de alto padrão, aparelhos modernos e uma energia que contagia.
+    </p>
+
+    <p style="font-size: 1.1em; text-align: justify; line-height: 1.7; color: #333;">
+        Aqui, você treina com propósito, foco e disciplina — construindo não só músculos, mas também constância, superação e estilo de vida.
+    </p>
+
+    <p style="font-size: 1.1em; text-align: justify; line-height: 1.7; color: #333;">
+        O mercado fitness no Brasil tem registrado um crescimento significativo, especialmente no segmento das academias femininas, que oferecem uma experiência diferenciada ao público feminino.
+    </p>
+
+    <p style="font-size: 1.1em; text-align: justify; line-height: 1.7; color: #333;">
+        Um dos motivos desse crescimento é o ambiente seguro e confortável. Muitas mulheres evitam academias mistas por falta de privacidade ou receio de situações de assédio. Academias como a Line Girls oferecem liberdade, segurança e acolhimento.
+    </p>
+
+    <p style="font-size: 1.2em; font-weight: bold; color: #e6007e; margin-top: 30px;">
+        Cadastre-se e descubra nossos planos especiais!
+    </p>
+
+    <div style="margin-top: 30px;">
+        <a href="{% url 'registrar' %}">
+            <button style="
+                background-color: #e6007e;
+                color: white;
+                font-size: 1.2em;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#c4006a'" onmouseout="this.style.backgroundColor='#e6007e'">
+                Matricule-se agora
+            </button>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

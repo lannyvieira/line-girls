@@ -1,0 +1,31 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+<h2 style="text-align: center;">🌟 Por que escolher a Line Girls?</h2>
+
+<div style="max-width: 800px; margin: 0 auto; background-color: #ffe6f0; padding: 30px; border-radius: 12px;">
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 20px;">
+            ✅ <strong>Ambiente 100% feminino:</strong> conforto, acolhimento e segurança para você se sentir à vontade em cada treino.
+        </li>
+        <li style="margin-bottom: 20px;">
+            💪 <strong>Equipe especializada:</strong> personal trainers mulheres, capacitadas e prontas para te acompanhar nos seus objetivos.
+        </li>
+        <li style="margin-bottom: 20px;">
+            🕒 <strong>Horários flexíveis:</strong> para caber na sua rotina — manhã, tarde ou noite.
+        </li>
+        <li style="margin-bottom: 20px;">
+            🎀 <strong>Estrutura pensada para mulheres:</strong> equipamentos, treinos e planos sob medida.
+        </li>
+        <li style="margin-bottom: 20px;">
+            🤝 <strong>Comunidade que apoia:</strong> aqui, uma mulher fortalece a outra. Venha fazer parte dessa energia!
+        </li>
+    </ul>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{% url 'registrar' %}">
+        <button>Quero fazer parte</button>
+    </a>
+</div>
+{% endblock %}

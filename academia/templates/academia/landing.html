@@ -1,0 +1,83 @@
+{% extends 'academia/base.html' %}
+{% block content %}
+<style>
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    background-color: #fef6ff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  h1 {
+    color: #a300a3;
+  }
+
+  .btn {
+    background-color: #a300a3;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #d100d1;
+  }
+
+  .social {
+    margin-top: 30px;
+  }
+
+  .social a {
+    margin: 0 10px;
+    color: #a300a3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .social a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div style="text-align: center; padding: 40px; background: linear-gradient(to bottom right, #ffe6f0, #fff); border-radius: 12px;">
+    <h1 style="color: #d63384; font-size: 2.5em;">💖 Seja Bem-vinda à Line Girls!</h1>
+    <p style="font-size: 1.2em; max-width: 700px; margin: 0 auto;">
+        Um espaço exclusivo para mulheres que querem se cuidar, se fortalecer e se sentir incríveis todos os dias!
+    </p>
+
+    <div style="margin: 30px 0;">
+        <h3>🎁 Promoção exclusiva: <span style="color: #e83e8c;">10% de desconto</span> na primeira matrícula com o cupom <strong>LANNY10</strong></h3>
+    </div>
+
+    <a href="{% url 'registrar' %}">
+        <button style="font-size: 1.1em;">Quero me cadastrar agora</button>
+    <div style="margin-top: 40px;">
+    <h3 style="color: #d63384;">📲 Fale com a gente</h3>
+    <p><a href="https://wa.me/message/F7NNU7JYHESNA1" target="_blank">WhatsApp: (89) 994393296</a></p>
+    <p>
+        <a href="https://www.instagram.com/academia_linegirls?igsh=Nmxxbmkyd3FjMWFm" target="_blank">Instagram</a> |
+    </p>
+</div>
+
+    </a>
+
+    <div style="margin-top: 40px;">
+        <img src="https://i.imgur.com/f9eUdIY.png" alt="Academia feminina" style="max-width: 100%; border-radius: 8px;">
+    </div>
+
+    <div style="margin-top: 40px; font-size: 1.1em;">
+        <p>📍 Localização segura e acessível</p>
+        <p>💬 Suporte via WhatsApp e redes sociais</p>
+        <p>👩‍🏫 Acompanhamento com personal feminino</p>
+    </div>
+</div>
+{% endblock %}

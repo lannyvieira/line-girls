@@ -1,0 +1,145 @@
+{% load tz %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Line Girls - Academia Feminina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #fff0f6;
+            color: #4a4a4a;
+        }
+
+        header {
+            background-color: #f13a96;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #ffe0ef;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #d63384;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #f13a96;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: 2em;
+        }
+
+        button {
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            padding: 0.7em 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0559f;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+
+        @media (max-width: 600px) {
+            .foto-card h3 {
+                font-size: 1rem;
+            }
+
+            .foto-card p {
+                font-size: 0.8rem;
+            }
+
+            .titulo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Academia Line Girls</h1>
+
+    </header>
+
+    <nav>
+        <a href="{% url 'home' %}">Início</a>
+        <a href="{% url 'sobre' %}">Sobre</a>
+        <a href="{% url 'porque' %}">Por que nos escolher?</a>
+        <a href="{% url 'horarios' %}">Horários</a>
+        <a href="{% url 'personals' %}">Personais</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}">Minha Conta</a>
+        <a href="{% url 'logout' %}">Sair</a>
+        {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'registrar' %}">Matricule-se</a>
+        {% endif %}
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <footer>
+        <p style="margin-top: 10px;">© {{ now|date:"Y" }} Line Girls. Todos os direitos reservados.</p>
+        <a href="https://wa.me/message/F7NNU7JYHESNA1" target="_blank">WhatsApp</a> |
+        <a href="https://www.instagram.com/academia_linegirls?igsh=Nmxxbmkyd3FjMWFm" target="_blank">Instagram</a> |
+    </footer>
+    {% if messages %}
+    <div style="max-width: 600px; margin: 20px auto;">
+        {% for message in messages %}
+        <div
+            style="background-color: #f3e5f5; color: #4a148c; padding: 15px; border-left: 6px solid #ba68c8; border-radius: 5px; margin-bottom: 10px;">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

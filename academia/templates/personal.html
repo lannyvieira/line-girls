@@ -1,0 +1,29 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+<h2 style="text-align: center;">🏋️‍♀️ Nossas Personal Trainers</h2>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+    {% for p in personals %}
+    <div style="width: 280px; background-color: #ffe6f0; border-radius: 10px; padding: 15px; box-shadow: 0 0 10px #f5c2d9;">
+        {% if p.foto %}
+        <img src="{{ p.foto.url }}" alt="Foto de {{ p.nome }}" style="width: 100%; height: 240px; object-fit: cover; border-radius: 8px;">
+        {% else %}
+        <div style="width: 100%; height: 240px; background-color: #ffc0cb; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white;">
+            Sem foto
+        </div>
+        {% endif %}
+        <h3 style="margin-top: 10px;">{{ p.nome }}</h3>
+        <p><strong>Especialidade:</strong> {{ p.especialidade }}</p>
+        <p>{{ p.bio }}</p>
+        <a href="https://wa.me/{{ p.whatsapp }}" target="_blank">
+            <button style="margin-top: 10px; width: 100%;">Falar no WhatsApp</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{% url 'dashboard' %}"><button>Voltar ao painel</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+<h2 style="text-align: center;">✏️ Editar Matrícula</h2>
+
+<div style="max-width: 600px; margin: 0 auto; background-color: #fff0f5; padding: 25px; border-radius: 10px;">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div style="text-align: center;">
+            <button type="submit">Salvar alterações</button>
+        </div>
+    </form>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{% url 'dashboard' %}">
+        <button style="background-color: #ccc;">Cancelar</button>
+    </a>
+</div>
+{% endblock %}

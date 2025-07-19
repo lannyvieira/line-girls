@@ -1,0 +1,30 @@
+{% extends 'academia/base.html' %}
+
+{% block content %}
+    <h2 style="text-align: center; color: #a300a3;">⏰ Horários Disponíveis</h2>
+
+    <div style="max-width: 700px; margin: 0 auto; background-color: #fff0f5; padding: 20px; border-radius: 10px;">
+        {% if horarios %}
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: #f8c8dc;">
+                        <th style="padding: 10px;">Atividade</th>
+                        <th style="padding: 10px;">Dia</th>
+                        <th style="padding: 10px;">Horário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for horario in horarios %}
+                    <tr style="text-align: center; border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px;">{{ horario.atividade }}</td>
+                        <td style="padding: 10px;">{{ horario.dia_semana|title }}</td>
+                        <td style="padding: 10px;">{{ horario.horario }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align: center; color: #a300a3;">Nenhum horário cadastrado no momento.</p>
+        {% endif %}
+    </div>
+{% endblock %}

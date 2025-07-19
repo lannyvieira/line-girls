@@ -1,0 +1,87 @@
+{% extends 'academia/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="titulo">Galeria de Fotos</h2>
+
+<section class="bloco">
+    <h3 class="subtitulo">Nosso Espaço</h3>
+    <div class="galeria">
+        {% for foto in fotos_academia %}
+        <div class="foto-card">
+            <img src="{{ foto.imagem.url }}" alt="{{ foto.titulo }}">
+            {% if foto.titulo %}
+                <h3>{{ foto.titulo }}</h3>
+            {% endif %}
+            <p>{{ foto.descricao }}</p>
+        </div>
+        {% empty %}
+        <p>Nenhuma foto do espaço foi adicionada ainda.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="bloco">
+    <h3 class="subtitulo">Nossos Eventos</h3>
+    <div class="galeria">
+        {% for foto in fotos_eventos %}
+        <div class="foto-card">
+            <img src="{{ foto.imagem.url }}" alt="{{ foto.titulo }}">
+            {% if foto.titulo %}
+                <h3>{{ foto.titulo }}</h3>
+            {% endif %}
+            <p>{{ foto.descricao }}</p>
+        </div>
+        {% empty %}
+        <p>Nenhuma foto de evento foi adicionada ainda.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: #e83e8c;
+        margin-top: 20px;
+        font-size: 2rem;
+    }
+    .subtitulo {
+        color: #d63384;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        border-left: 4px solid #f8c4d9;
+        padding-left: 10px;
+    }
+    .bloco {
+        margin: 40px 20px;
+    }
+    .galeria {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 10px 0;
+    }
+    .foto-card {
+        background: #fff;
+        border: 2px solid #f8d7e0;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        overflow: hidden;
+        padding: 10px;
+        text-align: center;
+    }
+    .foto-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .foto-card h3 {
+        margin: 10px 0 5px;
+        color: #c2185b;
+    }
+    .foto-card p {
+        color: #666;
+        font-size: 0.9em;
+    }
+</style>
+{% endblock %}
