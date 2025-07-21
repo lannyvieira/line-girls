@@ -3,9 +3,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .forms import RegistroAlunaForm, MatriculaForm
-from .models import Matricula, Horario, PersonalTrainer
+from .models import Matricula
 from django.contrib import messages
-from .models import FotoGaleria
 from .models import Foto
 
 def home(request):
@@ -31,23 +30,33 @@ def registrar_aluna(request):
 
 @login_required
 def matricula(request):
+    print("Entrou na view de matrícula")  # debug
+
     try:
         Matricula.objects.get(user=request.user)
+        print("Usuário já possui matrícula")
         return redirect('dashboard')
     except Matricula.DoesNotExist:
-        pass
+        print("Usuário ainda não possui matrícula")
 
     if request.method == 'POST':
+        print("Recebido POST com dados:", request.POST)
         form = MatriculaForm(request.POST)
         if form.is_valid():
+            print("Formulário válido")
             matricula = form.save(commit=False)
             matricula.user = request.user
             matricula.save()
-            messages.success(request, 'Matrícula efetuada com sucesso! Seja bem-vinda')
             return redirect('dashboard')
+        else:
+            print("Formulário inválido:", form.errors)
+    
     else:
         form = MatriculaForm()
+    
     return render(request, 'academia/matricula.html', {'form': form})
+
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -70,17 +79,6 @@ def logout_view(request):
 def dashboard(request):
     matricula = Matricula.objects.get(user=request.user)
     return render(request, 'academia/dashboard.html', {'matricula': matricula})
-
-def horarios(request):
-    horarios = Horario.objects.all()
-    return render(request, 'academia/horarios.html', {'horarios': horarios})
-
-
-
-def personals(request):
-    personals = PersonalTrainer.objects.all()
-    return render(request, 'academia/personals.html', {'personals': personals})
-
 
 @login_required
 def editar_matricula(request):

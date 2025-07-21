@@ -5,7 +5,7 @@
 <h2 class="titulo">Galeria de Fotos</h2>
 
 <section class="bloco">
-    <h3 class="subtitulo">Nosso Espaço</h3>
+    <h3 class="subtitulo">💪 Nosso Espaço</h3>
     <div class="galeria">
         {% for foto in fotos_academia %}
         <div class="foto-card">
@@ -22,7 +22,7 @@
 </section>
 
 <section class="bloco">
-    <h3 class="subtitulo">Nossos Eventos</h3>
+    <h3 class="subtitulo">🎉 Nossos Eventos</h3>
     <div class="galeria">
         {% for foto in fotos_eventos %}
         <div class="foto-card">
@@ -41,47 +41,70 @@
 <style>
     .titulo {
         text-align: center;
-        color: #e83e8c;
+        color: #e6007e;
         margin-top: 20px;
         font-size: 2rem;
     }
+
     .subtitulo {
-        color: #d63384;
+        color: #e6007e;
         margin-bottom: 10px;
         font-size: 1.5rem;
         border-left: 4px solid #f8c4d9;
         padding-left: 10px;
     }
+
     .bloco {
         margin: 40px 20px;
     }
+
     .galeria {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
         padding: 10px 0;
     }
+
     .foto-card {
-        background: #fff;
-        border: 2px solid #f8d7e0;
+        background: #fff0f6;
+        border: 2px solid #f5c2da;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 12px rgba(232, 62, 140, 0.1);
         overflow: hidden;
         padding: 10px;
         text-align: center;
+        transition: transform 0.3s ease;
     }
+
     .foto-card img {
         width: 100%;
         height: auto;
         border-radius: 8px;
+        transition: transform 0.3s ease;
     }
+
+    .foto-card:hover img {
+        transform: scale(1.05);
+    }
+
     .foto-card h3 {
         margin: 10px 0 5px;
         color: #c2185b;
     }
+
     .foto-card p {
         color: #666;
         font-size: 0.9em;
+    }
+
+    @media (max-width: 480px) {
+        .titulo {
+            font-size: 1.5rem;
+        }
+
+        .subtitulo {
+            font-size: 1.2rem;
+        }
     }
 </style>
 {% endblock %}

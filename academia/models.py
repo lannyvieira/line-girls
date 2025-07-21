@@ -15,31 +15,6 @@ class Matricula(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.plano}"
 
-class Horario(models.Model):
-    atividade = models.CharField(max_length=100)
-    dia_semana = models.CharField(max_length=10, choices=[
-        ('segunda', 'Segunda'),
-        ('terca', 'Terça'),
-        ('quarta', 'Quarta'),
-        ('quinta', 'Quinta'),
-        ('sexta', 'Sexta'),
-        ('sabado', 'Sábado')
-    ])
-    horario = models.TimeField()
-
-    def __str__(self):
-        return f"{self.atividade} - {self.dia_semana.title()} às {self.horario.strftime('%H:%M')}"
-
-class PersonalTrainer(models.Model):
-    nome = models.CharField(max_length=100)
-    especialidade = models.CharField(max_length=100)
-    bio = models.TextField()
-    foto = models.ImageField(upload_to='personals/', blank=True, null=True)
-    whatsapp = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.nome
-    
 
 CATEGORIAS = [
     ('academia', 'Academia'),

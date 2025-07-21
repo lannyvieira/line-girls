@@ -12,8 +12,6 @@
         <p><strong>Data da matrícula:</strong> {{ matricula.data_matricula }}</p>
 
         <div style="margin-top: 20px;">
-            <a href="{% url 'horarios' %}"><button>Ver horários disponíveis</button></a>
-            <a href="{% url 'personals' %}"><button style="margin-left: 10px;">Conhecer personal trainers</button></a>
             <a href="{% url 'editar_matricula' %}">
     <button style="margin-top: 10px;">Editar matrícula</button>
 </a>
@@ -23,7 +21,7 @@
 
     <div style="text-align: center; margin-top: 30px;">
         <a href="{% url 'logout' %}">
-            <button style="background-color: #ccc; color: #333;">Sair da conta</button>
+            <button style="background-color: #e6007e; color: #f0e1ea;">Sair da conta</button>
         </a>
     </div>
 {% endblock %}
