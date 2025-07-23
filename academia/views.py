@@ -7,6 +7,7 @@ from .models import Matricula
 from django.contrib import messages
 from .models import Foto
 
+
 def home(request):
     return render(request, 'academia/home.html')
 
